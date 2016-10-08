@@ -59,6 +59,8 @@ Tests simplifiés
 -----------------------
 
 - Découpage des taches simplifié
+- TDD : commencer par le dev/test du module métier, puis le reste suivra
+- Permet de valider le métier très rapidement
 
 Comment je mets ça en place dans mon projet ?
 -----------------------
