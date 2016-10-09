@@ -8,6 +8,7 @@
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" media="screen" href="css/jellee-typeface.css" type="text/css"/> 
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -24,8 +25,10 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>
-					<h1>Architecture héxagonale</h1>
+				<section style="text-align: right;">
+					<h1 style="font-family: 'JelleeRoman'">Architecture héxagonale</h1>
+					<h2 style="font-family: 'JelleeRoman'">Human Talks Lyon</h2>
+					<h3 style="font-family: 'JelleeRoman'">12 octobre <font style="color: orange">2016</font></h3>
 				</section>
 				<section>
 					<h1>Jean Detoeuf</h1>
@@ -34,11 +37,13 @@
 					<p>#jvm #docker #craftmanship #rpi #diy</p>
 				</section>
 				<section data-background="img/spaghetti.jpg">
-					<ul>
-						<li>Code framework au milieu du code métier</li>
-						<li>Difficulté pour changer de framework</li>
-						<li>Tests trop lourds (besoin de charger une BDD en mémoire, un framework de DI)</li>
-					</ul>
+					<div style="background-color:rgba(0, 0, 0, 0.5);">
+						<ul>
+							<li>Code framework au milieu du code métier</li>
+							<li>Difficulté pour changer de framework</li>
+							<li>Tests trop lourds</li>
+						</ul>
+					</div>
 				</section>
 				<section>
 					<h3>Architecture en couche</h3>
@@ -46,13 +51,19 @@
 						<li>Simple à comprendre</li>
 						<li>Montre le flux de données</li>
 					</ul>
+					<p>
+						<img src="img/burgerJoli.gif" style="border:0; height: 350px;">
+					</p>
 				</section>
 				<section>
 					<h3>Architecture en couche</h3>
 					<ul>
-						<li>Ca marche bien avec une couche de présentation et une couche de persistence</li>
-						<li>Les couches se mélanngent dans le code</li>
+						<li>Simple avec une couche de présentation et une couche de persistence</li>
+						<li>Les couches se mélangent dans le code</li>
 					</ul>
+					<p>
+						<img src="img/burgerMechant.gif" style="border:0; height: 350px;">
+					</p>
 				</section>
 				<section>
 					<h3>Architecture héxagonale</h3>
@@ -61,6 +72,9 @@
 						<li>Agnostique : vous pouvez l'utiliser avec votre langage préféré</li>
 						<li>Anti-framework par excellence</li>
 					</ul>
+					<p>
+						<img src="img/citadelle.jpg" style="border:0; height: 350px;">
+					</p>
 				</section>
 				<section>
 					<h3>Lancement d'un projet</h3>
@@ -68,6 +82,10 @@
 						<li>Reporter les choix techniques</li>
 						<li>Connaissance métier limitée en début de projet</li>
 					</ul>
+					<p>
+						<object data="img/connaissance.svg" type="image/svg+xml">
+						</object>
+					</p>
 				</section>
 				<section>
 					<h3>Concept</h3>
@@ -75,13 +93,18 @@
 						<li>Code métier sans bibliothèque ni framework (ou alors très simples)</li>
 						<li>Code technique dans des modules séparés</li>
 					</ul>
+					<p>
+						<object data="img/hexa.svg" type="image/svg+xml">
+						</object>
+					</p>
 				</section>
 				<section>
 					<h3>Tests simplifiés</h3>
 					<ul>
 						<li>Découpage des taches simplifié</li>
-						<li>TDD : commencer par le dev/test du module métier, puis le reste suivra</li>
-						<li>Permet de valider le métier très rapidement</li>
+						<li>TDD : dev/test métier, puis autres modules</li>
+						<li>Tests métier sans avoir à gérer l'infra</li>
+						<li>Validation rapide du métier</li>
 					</ul>
 				</section>
 				<section>
@@ -90,6 +113,9 @@
 						<li>nouveaux : simple à mettre en place</li>
 						<li>existants : beaucoup plus compliqué à déméller le spaggheti</li>
 					</ul>
+					<p>
+						<img src="img/cantWait.gif" style="border:0; height: 350px;">
+					</p>
 				</section>
 				<section>
 					<h3>Perspectives</h3>
@@ -122,6 +148,9 @@
 				</section>
 				<section>
 					<h3>Questions ?</h3>
+					<p>
+						<img src="img/questions.gif" style="border:0; height: 350px;">
+					</p>
 				</section>
 			</div>
 		</div>
