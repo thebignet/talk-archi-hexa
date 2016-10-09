@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Architecture héxagonale</h1>
+				</section>
+				<section data-background="img/spaghetti.jpg">
+					<p>
+						<ul>
+							<li>Code framework au milieu du code métier</li>
+							<li>Difficulté pour changer de framework</li>
+							<li>Tests trop lourds (besoin de charger une BDD en mémoire, un framework de DI)</li>
+						</ul>
+					</p>
+				</section>
+				<section>
+					<h3>Architecture en couche</h3>
+					<ul>
+						<li>Simple à comprendre</li>
+						<li>Montre le flux de données</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Architecture en couche</h3>
+					<ul>
+						<li>Ca marche bien avec une couche de présentation et une couche de persistence</li>
+						<li>Les couches se mélanngent dans le code</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Architecture héxagonale</h3>
+					<ul>
+						<li>Permet d'isoler le code métier du code d'infrastructure</li>
+						<li>Agnostique : vous pouvez l'utiliser avec votre langage préféré</li>
+						<li>Anti-framework par excellence</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Lancement d'un projet</h3>
+					<ul>
+						<li>Reporter les choix techniques</li>
+						<li>Connaissance métier limitée en début de projet</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Concept</h3>
+					<ul>
+						<li>Code métier sans bibliothèque ni framework (ou alors très simples)</li>
+						<li>Code technique dans des modules séparés</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Tests simplifiés</h3>
+					<ul>
+						<li>Découpage des taches simplifié</li>
+						<li>TDD : commencer par le dev/test du module métier, puis le reste suivra</li>
+						<li>Permet de valider le métier très rapidement</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Comment je mets ça en place dans mon projet ?</h3>
+					<ul>
+						<li>nouveaux : simple à mettre en place</li>
+						<li>existants : beaucoup plus compliqué à déméller le spaggheti</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Perspectives</h3>
+					<ul>
+						<li>Changer de framework</li>
+						<li>Changer de BDD</li>
+						<li>Migrer une partie des données (ie SQL vers NoSQL)</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Points d'attention</h3>
+					<ul>
+						<li>Impossible d'utiliser du code "infra" dans le module "métier"</li>
+						<li>Rien n'empêche d'avoir du code "métier" qui se retrouve dans les modules "infra".</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Dans quels cas ne pas l'utiliser</h3>
+					<ul>
+						<li>Développement d'un framework ou une librairie</li>
+						<li>Développement d'un module technique</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Premier pas vers le DDD</h3>
+					<ul>
+						<li>Faire communiquer plusieurs héxagones, chacun représentant un métier séparé</li>
+						<li>Un amateur pour faire une présentation du DDD ?</li>
+					</ul>
+				</section>
+				<section>
+					<h3>Questions ?</h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
